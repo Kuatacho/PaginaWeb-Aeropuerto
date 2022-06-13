@@ -32,6 +32,14 @@ switch($accion){
 
     case "Seleccionar":
         //echo "Presionado Seleccionar";
+        $sentenciaSQL=$conexion->prepare("DELETE FROM libros WHERE id=:id");
+        $sentenciaSQL->bindParam(':id',$txtID);
+        $sentenciaSQL->execute();
+        $libro=$sentenciaSQL->fetch(PDO::FETCH_Lazy);
+
+        $txtNombre=$libro['nombre'];
+        $txtImagen=$libro['imagen'];
+
         break;
 
     case "Borrar":
@@ -61,16 +69,17 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class = "form-group">
                 <label for="txtID">ID</label>
-                <input type="text" class="form-control" name="txtID" id="txtID" placeholder="ID">
+                <input type="text" value="<?php echo $txtID; ?>" class="form-control" name="txtID" id="txtID" placeholder="ID">
                 </div>
 
                 <div class = "form-group">
                 <label for="txtNombre">Nombre</label>
-                <input type="text" class="form-control" name="txtNombre" id="txtNombre" placeholder="Nombre Del Libro">
+                <input type="text" value="<?php echo $txtNombre; ?>" class="form-control" name="txtNombre" id="txtNombre" placeholder="Nombre Del Libro">
                 </div>
 
                 <div class = "form-group">
                 <label for="txtID">Imagen</label>
+                <?php echo $txtImagen; ?>
                 <input type="file" class="form-control" name="txtImagen" id="txtImagen" placeholder="ID">
                 </div>
 
@@ -110,7 +119,7 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
                 <td>
                     
-                    Seleccionar / Borrar
+                    
                     <form  method="post">
                         <input type="hidden" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>">
 
