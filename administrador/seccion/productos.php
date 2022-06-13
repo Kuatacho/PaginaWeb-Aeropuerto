@@ -5,24 +5,9 @@ $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
 $txtImagen=(isset($_FILES['txtImagen']['name']))?$_FILES['txtImagen']['name']:"";
 $accion=(isset($_POST['accion']))?$_POST['accion']:"";
 
-echo $txtID."<br/>";
-echo $txtNombre."<br/>";
-echo $txtImagen."<br/>";
-echo $accion."<br/>";
+include("../config/bd.php");
 
-$host="localhost";
-$bd="sitio";
-$usuario="root";
-$contrasenia="";
 
-try {
-    $conexion=new PDO("mysql:host=$host;dbname=$bd",$usuario,$contrasenia);
-    if($conexion){echo"Conectado!";}
-    
-} catch (Exception $ex) {
-    echo $ex->getMessage();
-    
-}
 
 
 
@@ -31,6 +16,8 @@ switch($accion){
     
     case "Agregar":
         //INSERT INTO `libros` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro Ejemplo', 'i.jpg');
+        $sentenciaSQL=$conexion->prepare("INSERT INTO `libros` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro PHP', 'img.jpg');");
+        $sentenciaSQL->execute();
         echo "Presionado Agregar";
         break;
 
