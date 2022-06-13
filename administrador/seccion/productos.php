@@ -32,10 +32,10 @@ switch($accion){
 
     case "Seleccionar":
         //echo "Presionado Seleccionar";
-        $sentenciaSQL=$conexion->prepare("DELETE FROM libros WHERE id=:id");
+        $sentenciaSQL=$conexion->prepare("SELECT * FROM libros WHERE id=:id");
         $sentenciaSQL->bindParam(':id',$txtID);
         $sentenciaSQL->execute();
-        $libro=$sentenciaSQL->fetch(PDO::FETCH_Lazy);
+        $libro=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
 
         $txtNombre=$libro['nombre'];
         $txtImagen=$libro['imagen'];
