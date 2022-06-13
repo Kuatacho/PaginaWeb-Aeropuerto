@@ -18,12 +18,36 @@ switch($accion){
     case "Agregar":
         $sentenciaSQL=$conexion->prepare("INSERT INTO libros (nombre, imagen) VALUES (:nombre, :imagen);");
         $sentenciaSQL->bindParam(':nombre',$txtNombre);
-        $sentenciaSQL->bindParam(':imagen',$txtImagen);
+
+        $fecha=new DateTime();
+        $nombreArchivo=($txtImagen!="")?$fecha->getTimestamp()."_".$_FILES["txtImagen"]["name"]:"imagen.jpg";
+        $tmpImagen=$_FILES["txtImagen"]["tmp_name"];
+
+        if($tmpImagen!=""){
+            move_uploaded_file($tmpImagen,"../../img/".$nombreArchivo);
+        }
+
+        $sentenciaSQL->bindParam(':imagen',$nombreArchivo);
         $sentenciaSQL->execute();
         break;
 
     case "Modificar":
-        echo "Presionado Modificar";
+        //echo "Presionado Modificar";
+        $sentenciaSQL=$conexion->prepare("UPDATE libros SET nombre=:nombre WHERE id=:id");
+        $sentenciaSQL->bindParam(':nombre',$txtNombre);
+        $sentenciaSQL->bindParam(':id',$txtID);
+        $sentenciaSQL->execute();
+
+        if($txtImagen!=""){
+            $sentenciaSQL=$conexion->prepare("UPDATE libros SET imagen=:imagen WHERE id=:id");
+            $sentenciaSQL->bindParam(':imagen',$txtImagen);
+            $sentenciaSQL->bindParam(':id',$txtID);
+            $sentenciaSQL->execute();
+
+        }
+        
+        
+
         break;
 
     case "Cancelar":
