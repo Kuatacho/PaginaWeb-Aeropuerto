@@ -18,6 +18,9 @@
                 <p class="lead">
                     <a class="btn btn-primary btn-lg" href="equipaje.php" role="button">Pet-Check</a>
                 </p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="equipaje.php" role="button">Reserva Tu Boleto</a>
+                </p>
             </div>
 <?php include("template/pie.php"); ?>
 
