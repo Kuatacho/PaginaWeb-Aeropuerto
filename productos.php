@@ -8,6 +8,8 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
+
+
 <?php  foreach($listaLibros as $libro){ ?>
 <div class="col-md-3">
     <div class="card">

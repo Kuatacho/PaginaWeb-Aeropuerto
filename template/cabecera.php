@@ -30,24 +30,36 @@
 
 
                 <li class="nav-item">
-                <a class="nav-link" href="productos.php">Libros</a>
+                <a class="nav-link" href="productos.php">Contamos con Aerolineas</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="nosotros.php">Nosotros</a>
+                <a class="nav-link" href="vuelos.php">Seguimiento De Vuelos</a>
                 </li>
+
+                
                 
 
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                Más
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
+
+
+                <li class="nav-item">
+                <a class="nav-link" href="nosotros.php">Nosotros</a>
+                </li>
+
+                <li class="nav-item active">
+                <a class="nav-link" href="administrador/index.php">ADMIN <span class="sr-only"></span></a>
+                </li>
                 </div>
+                
 
 
                 

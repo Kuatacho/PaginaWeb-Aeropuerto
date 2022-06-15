@@ -1,5 +1,5 @@
 <?php include ("template/cabecera.php");?>
-<?php include ("administrador/config/bd.php");?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,14 +23,14 @@
                     <div class="form-row">
                     <div class="col-md-4 mb-3">
                     <label for="validationCustom01">First name</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                    <input type="text" name="txtName" class="form-control" id="txtName" placeholder="First name" value="Mark" required>
                     <div class="valid-feedback">
                     Looks good!
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
                     <label for="validationCustom02">Last name</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                    <input type="text" name="txtApellid" class="form-control" id="txtApellid" placeholder="Last name" value="Otto" required>
                     <div class="valid-feedback">
                     Looks good!
                     </div>
@@ -113,7 +113,22 @@
     
     
     <?php
-    
+      include ("administrador/config/bd.php");
+
+
+      $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtID']:"";
+      $txtApellid=(isset($_POST['txtapellid']))?$_POST['txtNombre']:"";
+      $sentenciaSQL=$conexion->prepare("INSERT INTO libros (nombre, imagen) VALUES (:nombre, :imagen);");
+      $sentenciaSQL->bindParam(':nombre',$txtNombre);
+      $sentenciaSQL->bindParam(':aeplld',$txtNombre);
+      $sentenciaSQL->bindParam(':etc',$txtNombre);
+
+      $sentenciaSQL->execute();
+
+      header ("Location:productos.php");
+      
+
+
     ?>
     
     

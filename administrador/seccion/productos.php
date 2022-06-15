@@ -117,7 +117,7 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 <div class="col-md-5">
     <div class="card">
         <div class="card-header">
-            Datos Libro
+            Administracion De Aerolineas
         </div>
 
         <div class="card-body">
@@ -130,8 +130,8 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class = "form-group">
-                <label for="txtNombre">Nombre</label>
-                <input type="text" required value="<?php echo $txtNombre; ?>" class="form-control" name="txtNombre" id="txtNombre" placeholder="Nombre Del Libro">
+                <label for="txtNombre">Nombre de La Aerolinea</label>
+                <input type="text" required value="<?php echo $txtNombre; ?>" class="form-control" name="txtNombre" id="txtNombre" placeholder="Aerolinea">
                 </div>
 
                 <div class = "form-group">
