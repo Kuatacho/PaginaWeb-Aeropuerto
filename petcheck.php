@@ -1,28 +1,4 @@
 <?php include ("template/cabecera.php");?>
-<?php
-include ("administrador/config/bd.php");
-
-
-$txtnombre=(isset($_POST['txtnombre']))?$_POST['txtnombre']:"";
-$txtnumvuelo=(isset($_POST['txtnumvuelo']))?$_POST['txtnumvuelo']:"";
-$txtcarnet=(isset($_POST['txtcarnet']))?$_POST['txtcarnet']:"";
-$txtcorreo=(isset($_POST['txtcorreo']))?$_POST['txtcorreo']:"";
-$txtaerolinea=(isset($_POST['txtaerolinea']))?$_POST['txtaerolinea']:"";
-$txtfecha=(isset($_POST['txtfecha']))?$_POST['txtfecha']:"";
-
-
-$sentenciaSQL=$conexion->prepare("INSERT INTO checkin (nombre, vuelo, carnet, correo, aerolinea, fecha) VALUES (:nombre, :vuelo, :carnet, :correo, :aerolinea, :fecha);");
-$sentenciaSQL->bindParam(':nombre',$txtnombre);
-$sentenciaSQL->bindParam(':vuelo',$txtnumvuelo);
-$sentenciaSQL->bindParam(':carnet',$txtcarnet);
-$sentenciaSQL->bindParam(':correo',$txtcorreo);
-$sentenciaSQL->bindParam(':aerolinea',$txtaerolinea);
-$sentenciaSQL->bindParam(':fecha',$txtfecha);
-
-
-$sentenciaSQL->execute();
-//header ("Location:checkin.php");
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +6,7 @@ $sentenciaSQL->execute();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHECK - IN </title>
+    <title>PET - CHECK</title>
 </head>
 <body>
 <div class="container">
@@ -41,52 +17,40 @@ $sentenciaSQL->execute();
                 <div class="card text-left">
                 <img class="card-img-top" src="holder.js/100px180/" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">CHECK - IN </h4>
+                    <h4 class="card-title">PET - CHECK </h4>
                     <form method="POST" class="needs-validation" novalidate>
                     <div class="form-row">
                     <div class="col-md-4 mb-3">
-                    <label for="validationCustom01">Ingrese su nombre completo:</label>
-                    <input type="text" class="form-control" name ="txtnombre" id="txtnombre" placeholder="Nombre completo" value="" required>
+                    <label for="validationCustom01">Ingrese tipo de animal:</label>
+                    <input type="text" class="form-control" name="txtanimal" id="txtanimal" placeholder="Tipo de animal" value="" required>
                     <div class="valid-feedback">
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                    <label for="validationCustom02">Ingrese su numero de vuelo:</label>
-                    <input type="text" class="form-control" name ="txtnumvuelo"id="txtnumvuelo" placeholder="Numero de vuelo" value="" required>
-                    <div class="valid-feedback">
-                    </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                    <label for="validationCustom04">Ingrese su carnet de identidad:</label>
-                    <input type="number" class="form-control" name="txtcarnet"id="txtcarnet" placeholder="Carnet de identidad" required>
-                    <div class="invalid-feedback">
-                    </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                    <label for="validationCustomEmail">Ingrese su correo electronico:</label>
+                    <label for="validationCustomEmail">Ingrese el peso del animal en kg:</label>
                     <div class="input-group">
                     <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <span class="input-group-text" >kg</span>
                     </div>
-                    <input type="text" class="form-control" name="txtcorreo" id="txtcorreo" placeholder=" Correo electronico " 
+                    <input type="number" class="form-control" name="txtpeso" id="txtpeso" placeholder="Peso del animal" 
                     aria-describedby="inputGroupPrepend" required>
+                    
                     <div class="invalid-feedback">
                     </div>
                     </div>
-                    </div>
-                    </div>
-                    <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                    <label for="validationCustom03">Ingrese la aerolinea:</label>
-                    <input type="text" class="form-control" name="txtaerolinea"id="txtaerolinea" placeholder="Aerolinea" required>
-                    <div class="invalid-feedback">
                     </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                    <label for="validationCustom05">Ingrese la fecha:</label>
-                    <input type="date" class="form-control" name="txtfecha" id="txtfecha" placeholder="Fecha" required>
-                    <div class="invalid-feedback">
+                    <label for="validationCustom02">Ingrese el nombre de la mascota:</label>
+                    <input type="text" class="form-control" name="txtnombremascota" id="txtnombremascota" placeholder="Nombre de la mascota" value="" required>
+                    <div class="valid-feedback">
                     </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Ingrese su numero de vuelo:</label>
+                    <input type="text" class="form-control" name="txtnumerovuelo"id="txtnumerovuelo" placeholder="Numero de vuelo" value="" required>
+                    <div class="valid-feedback">
                     </div>
                     </div>
                     <div class="form-group">
@@ -123,10 +87,42 @@ $sentenciaSQL->execute();
                       }, false);
                      })();
                     </script>
+                    
+                    
                   </div>
                 </div>
+        
+    
+    
+    <?php
+    
+    ?>
+    
+    
     
 </body>
 </html>
+
 <?php include("template/pie.php"); ?>
 
+
+<?php
+include ("administrador/config/bd.php");
+
+$txtanimal=(isset($_POST['txtanimal']))?$_POST['txtanimal']:"";
+$txtpeso=(isset($_POST['txtpeso']))?$_POST['txtpeso']:"";
+$txtnombremascota=(isset($_POST['txtnombremascota']))?$_POST['txtnombremascota']:"";
+$txtnumerovuelo=(isset($_POST['txtnumerovuelo']))?$_POST['txtnumerovuelo']:"";
+
+
+
+$sentenciaSQL=$conexion->prepare("INSERT INTO petcheck ( animal, peso, nombremascota, numerovuelo ) VALUES (:animal, :peso, :nombremascota, :numerovuelo );");
+$sentenciaSQL->bindParam(':animal',$txtanimal);
+$sentenciaSQL->bindParam(':peso',$txtpeso);
+$sentenciaSQL->bindParam(':nombremascota',$txtnombremascota);
+$sentenciaSQL->bindParam(':numerovuelo',$txtnumerovuelo);
+
+
+$sentenciaSQL->execute();
+//header ("Location:petcheck.php");
+?>
