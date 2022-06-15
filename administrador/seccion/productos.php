@@ -8,11 +8,6 @@ $accion=(isset($_POST['accion']))?$_POST['accion']:"";
 
 include("../config/bd.php");
 
-
-
-
-
-
 switch($accion){
     
     case "Agregar":
@@ -163,12 +158,6 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
         </div>
         
     </div>
-
-
-
-    
-    
-    
 
 </div>
 <div class="col-md-7">

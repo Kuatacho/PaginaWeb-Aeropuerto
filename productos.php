@@ -22,12 +22,4 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 <?php } ?>
 
 
-
-
-
-
-
-
-
-
 <?php include("template/pie.php"); ?>
