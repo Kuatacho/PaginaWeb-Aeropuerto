@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/bootstrap.css"/>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="js/jquery.js" ></script>
+    <script src="js/bootstrap.js" ></script>
+    
+    
+    
 </head>
 <body>
     
@@ -60,7 +64,12 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="checkin.php">Checkin</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="checkinmenores.php">Checkin Menores De Edad</a>
+                    <a class="dropdown-item" href="petcheck.php">PetCheck</a>
+                    <a class="dropdown-item" href="equipaje.php">Registra Tu Equipaje</a>
+                    <a class="dropdown-item" href="reservatuboleto.php">Reserva Tu Boleto</a>
+
+                    
                     </div>
                     
                 </li>

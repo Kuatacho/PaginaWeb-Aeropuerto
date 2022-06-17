@@ -111,14 +111,14 @@ var Util = function ($$$1) {
     return this;
   }
 
-  function setTransitionEndSupport() {
+  /*function setTransitionEndSupport() {
     transition = transitionEndTest();
     $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
 
     if (Util.supportsTransitionEnd()) {
       $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
     }
-  }
+  }*/
 
   function escapeId(selector) {
     // We escape IDs in case of special selectors (selector = '#myId:something')
