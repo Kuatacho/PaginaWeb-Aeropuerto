@@ -72,7 +72,8 @@
                     <a class="dropdown-item" href="petcheck.php">PetCheck</a>
                     <a class="dropdown-item" href="equipaje.php">Registra Tu Equipaje</a>
                     <a class="dropdown-item" href="reservatuboleto.php">Reserva Tu Boleto</a>
-
+                    <a class="dropdown-item" href="encomiendasNacionales.php">Encomiendas Nacionales</a>
+                    <a class="dropdown-item" href="encomiendasInternacionales.php">Encomiendas Internacionales</a>
                     
                     </div>
                     
