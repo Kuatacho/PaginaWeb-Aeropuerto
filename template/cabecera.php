@@ -42,6 +42,10 @@
                 <li class="nav-item">
                 <a class="nav-link" href="vuelos.php">Seguimiento De Vuelos</a>
                 </li>
+                
+                <li class="nav-item">
+                <a class="nav-link" href="boletos.php">Reserva Tus Boletos</a>
+                </li>
 
                 
                 
@@ -93,4 +97,4 @@
 
     <div class="container">
         <br/>
-        <div class="row">
+    <div class="row">
