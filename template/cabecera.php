@@ -9,6 +9,10 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="js/jquery.js" ></script>
     <script src="js/bootstrap.js" ></script>
+
+
+
+    
     
     
     
@@ -96,6 +100,4 @@
     
     
 
-    <div class="container">
-        <br/>
-    <div class="row">
+    
