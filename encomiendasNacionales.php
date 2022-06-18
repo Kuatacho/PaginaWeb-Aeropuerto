@@ -133,7 +133,7 @@ $txtllegada=(isset($_POST['txtllegada']))?$_POST['txtllegada']:"";
 $txtfecha=(isset($_POST['txtfecha']))?$_POST['txtfecha']:"";
 
 
-$sentenciaSQL=$conexion->prepare("INSERT INTO checkin (nombre, carnet, nombredestinatario, carnetdestinatario, vuelo, aerolinea, origen, llegada, fecha) VALUES (:nombre, :carnet, :nombredestinatario, :carnetdestinatario, :vuelo, :aerolinea, :origen, :llegada, :fecha);");
+$sentenciaSQL=$conexion->prepare("INSERT INTO encomiendasnacionales (nombre, carnet, nombredestinatario, carnetdestinatario, vuelo, aerolinea, origen, llegada, fecha) VALUES (:nombre, :carnet, :nombredestinatario, :carnetdestinatario, :vuelo, :aerolinea, :origen, :llegada, :fecha);");
 $sentenciaSQL->bindParam(':nombre',$txtnombre);
 $sentenciaSQL->bindParam(':carnet',$txtcarnet);
 $sentenciaSQL->bindParam(':nombredestinatario',$txtnombredestinatario);
